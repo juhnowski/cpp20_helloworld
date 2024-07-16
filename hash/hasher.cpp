@@ -250,30 +250,65 @@ int main() {
     vector<string> obj_cond_hub_flds {"object","comparison_operator_hk","value"};
     gen_hub_table_many(obj_cond, obj_cond_hub_flds);
     
-    vector<string> obj_cond_hub_vls_from_all {obj_name_id,comp_op_matches,"*"};
-    string hk_obj_cond_hub_vls_from_all = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_from_all);
+    vector<string> obj_cond_hub_vls_get_1 {obj_name_name,comp_op_equals,"GET"};
+    string hk_obj_cond_hub_vls_get_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_get_1);
+    vector<string> obj_cond_hub_vls_put_1 {obj_name_name,comp_op_equals,"PUT"};
+    string hk_obj_cond_hub_vls_put_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_put_1);
+    vector<string> obj_cond_hub_vls_post_1 {obj_name_name,comp_op_equals,"POST"};
+    string hk_obj_cond_hub_vls_post_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_post_1);
+    vector<string> obj_cond_hub_vls_del_1 {obj_name_name,comp_op_equals,"DELETE"};
+    string hk_obj_cond_hub_vls_del_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_del_1);
+    vector<string> obj_cond_hub_vls_patch_1 {obj_name_name,comp_op_equals,"PATCH"};
+    string hk_obj_cond_hub_vls_patch_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_patch_1);
+    vector<string> obj_cond_hub_vls_head_1 {obj_name_name,comp_op_equals,"HEAD"};
+    string hk_obj_cond_hub_vls_head_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_head_1);
+    vector<string> obj_cond_hub_vls_options_1 {obj_name_name,comp_op_equals,"OPTIONS"};
+    string hk_obj_cond_hub_vls_options_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_options_1);
+    vector<string> obj_cond_hub_vls_trace_1 {obj_name_name,comp_op_equals,"TRACE"};
+    string hk_obj_cond_hub_vls_trace_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_trace_1);
+    vector<string> obj_cond_hub_vls_conn_1 {obj_name_name,comp_op_equals,"CONNECT"};
+    string hk_obj_cond_hub_vls_conn_1 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_conn_1);
+
+    // vector<string> obj_cond_hub_vls_get_2 {obj_name_name,comp_op_matches,"GET"};
+    // string hk_obj_cond_hub_vls_get_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_get_2);
+    // vector<string> obj_cond_hub_vls_put_2 {obj_name_name,comp_op_matches,"PUT"};
+    // string hk_obj_cond_hub_vls_put_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_put_2);
+    // vector<string> obj_cond_hub_vls_post_2 {obj_name_name,comp_op_matches,"POST"};
+    // string hk_obj_cond_hub_vls_post_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_post_2);
+    // vector<string> obj_cond_hub_vls_del_2 {obj_name_name,comp_op_matches,"DELETE"};
+    // string hk_obj_cond_hub_vls_del_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_del_2);
+    // vector<string> obj_cond_hub_vls_patch_2 {obj_name_name,comp_op_matches,"PATCH"};
+    // string hk_obj_cond_hub_vls_patch_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_patch_2);
+    // vector<string> obj_cond_hub_vls_head_2 {obj_name_name,comp_op_matches,"HEAD"};
+    // string hk_obj_cond_hub_vls_head_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_head_2);
+    // vector<string> obj_cond_hub_vls_options_2 {obj_name_name,comp_op_matches,"OPTIONS"};
+    // string hk_obj_cond_hub_vls_options_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_options_2);
+    // vector<string> obj_cond_hub_vls_trace_2 {obj_name_name,comp_op_matches,"TRACE"};
+    // string hk_obj_cond_hub_vls_trace_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_trace_2);
+    // vector<string> obj_cond_hub_vls_conn_2 {obj_name_name,comp_op_matches,"CONNECT"};
+    // string hk_obj_cond_hub_vls_conn_2 = gen_hub_rec_many(obj_cond, obj_cond_hub_flds, obj_cond_hub_vls_conn_2);
 
     gen_link_table(rule, obj_cond);
     
-    gen_link_rec(rule, obj_cond, get_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, put_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, post_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, del_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, patch_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, head_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, options_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, trace_1, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, conn_1, hk_obj_cond_hub_vls_from_all);
+    gen_link_rec(rule, obj_cond, get_1, hk_obj_cond_hub_vls_get_1);
+    gen_link_rec(rule, obj_cond, put_1, hk_obj_cond_hub_vls_put_1);
+    gen_link_rec(rule, obj_cond, post_1, hk_obj_cond_hub_vls_post_1);
+    gen_link_rec(rule, obj_cond, del_1, hk_obj_cond_hub_vls_del_1);
+    gen_link_rec(rule, obj_cond, patch_1, hk_obj_cond_hub_vls_patch_1);
+    gen_link_rec(rule, obj_cond, head_1, hk_obj_cond_hub_vls_head_1);
+    gen_link_rec(rule, obj_cond, options_1, hk_obj_cond_hub_vls_options_1);
+    gen_link_rec(rule, obj_cond, trace_1, hk_obj_cond_hub_vls_trace_1);
+    gen_link_rec(rule, obj_cond, conn_1, hk_obj_cond_hub_vls_conn_1);
  
-    gen_link_rec(rule, obj_cond, get_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, put_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, post_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, del_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, patch_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, head_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, options_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, trace_2, hk_obj_cond_hub_vls_from_all);
-    gen_link_rec(rule, obj_cond, conn_2, hk_obj_cond_hub_vls_from_all);
+    gen_link_rec(rule, obj_cond, get_2, hk_obj_cond_hub_vls_get_1);
+    gen_link_rec(rule, obj_cond, put_2, hk_obj_cond_hub_vls_put_1);
+    gen_link_rec(rule, obj_cond, post_2, hk_obj_cond_hub_vls_post_1);
+    gen_link_rec(rule, obj_cond, del_2, hk_obj_cond_hub_vls_del_1);
+    gen_link_rec(rule, obj_cond, patch_2, hk_obj_cond_hub_vls_patch_1);
+    gen_link_rec(rule, obj_cond, head_2, hk_obj_cond_hub_vls_head_1);
+    gen_link_rec(rule, obj_cond, options_2, hk_obj_cond_hub_vls_options_1);
+    gen_link_rec(rule, obj_cond, trace_2, hk_obj_cond_hub_vls_trace_1);
+    gen_link_rec(rule, obj_cond, conn_2, hk_obj_cond_hub_vls_conn_1);
 
 //
     string subj_cond = "subject_cond";
@@ -347,17 +382,17 @@ int main() {
 
     string actions = "actions";
     gen_dic_table(actions);
-    string actions_execute = gen_dic_rec(comp_op, "execute");
-    string actions_create = gen_dic_rec(comp_op, "create");
-    string actions_read = gen_dic_rec(comp_op, "read");
-    string actions_update = gen_dic_rec(comp_op, "update");
-    string actions_delete = gen_dic_rec(comp_op, "delete");
+    string actions_execute = gen_dic_rec(actions, "execute");
+    string actions_create = gen_dic_rec(actions, "create");
+    string actions_read = gen_dic_rec(actions, "read");
+    string actions_update = gen_dic_rec(actions, "update");
+    string actions_delete = gen_dic_rec(actions, "delete");
 
 
     string effects = "effects";
     gen_dic_table(effects);
-    string effects_allow = gen_dic_rec(comp_op, "allow");
-    string effects_deny = gen_dic_rec(comp_op, "deny");
+    string effects_allow = gen_dic_rec(effects, "allow");
+    string effects_deny = gen_dic_rec(effects, "deny");
 
     string rules_actions = "rules_actions";
     vector<string> rules_actions_hub_flds {"actions","effects"};
