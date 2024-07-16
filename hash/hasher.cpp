@@ -315,7 +315,7 @@ int main() {
     vector<string> subj_cond_hub_flds {"subject","comparison_operator_hk","value"};
     gen_hub_table_many(subj_cond, subj_cond_hub_flds);
 
-    vector<string> subj_cond_hub_vls_to_full_access {subj_name_id, comp_op_matches,"полный доступ"};
+    vector<string> subj_cond_hub_vls_to_full_access {subj_name_role, comp_op_contains,"полный доступ"};
     string hk_subj_cond_hub_vls_to_full_access = gen_hub_rec_many(subj_cond, subj_cond_hub_flds, subj_cond_hub_vls_to_full_access);
 
     vector<string> subj_cond_hub_vls_to_get_1 {subj_name_role,comp_op_contains,"читать 1"};
